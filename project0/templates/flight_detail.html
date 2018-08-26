@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+    {{flight_id}}
+{% endblock %}
+
+
+{% block body%}
+
+    <div class="container">
+        <h2 class="page-header">Flight information</h2>
+        {% for f in flights %}
+            <ul>
+                <li>id : {{f.id}}</li>
+                <li>from : {{f.origin}}</li>
+                <li>to : {{f.destination}}</li>
+            </ul>
+        {%endfor%}   
+    </div>    
+
+    <div class="container">
+        <h2 class="page-header">Passenger on this flight</h2>
+        
+        {% for p in passenger %}
+            <ul>
+                <li>{{p.name}}</li>
+            </ul>
+        {%endfor%}     
+    </div>
+
+      
+{% endblock %}
